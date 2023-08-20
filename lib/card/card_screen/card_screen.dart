@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_custom_clippers/flutter_custom_clippers.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
@@ -20,7 +19,15 @@ class CardWidget extends StatelessWidget {
               children: [
                 Container(
                     color: Colors.grey,
-                    child: PopularAppBar(const Icon(Icons.arrow_back))),
+                    child: InkWell(
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: PopularAppBar(InkWell(
+                            onTap: () {
+                              Navigator.pop(context);
+                            },
+                            child: const Icon(Icons.arrow_back))))),
                 ClipPath(
                   clipper: OvalBottomBorderClipper(),
                   child: Container(

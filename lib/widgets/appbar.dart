@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import '../constants/contants.dart';
 
 class PopularAppBar extends StatelessWidget {
-  final Icon icon;
-  PopularAppBar(this.icon, {super.key});
+  final InkWell iconwithtap;
+  PopularAppBar(this.iconwithtap, {super.key});
 
   final Constants _constants = Constants();
   @override
@@ -28,8 +27,8 @@ class PopularAppBar extends StatelessWidget {
                             spreadRadius: 2,
                             offset: Offset(0, 3)),
                       ]),
-                  child:
-                      Container(padding: EdgeInsets.all(8), child: this.icon),
+                  child: Container(
+                      padding: EdgeInsets.all(8), child: this.iconwithtap),
                 ),
                 onTap: () {
                   Scaffold.of(context).openDrawer();
@@ -60,7 +59,3 @@ class PopularAppBar extends StatelessWidget {
     );
   }
 }
-
-class PrimaryColor {}
-
-class _constants {}

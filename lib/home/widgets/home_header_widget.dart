@@ -6,7 +6,16 @@ class HomeScreenHeader extends StatelessWidget {
   HomeScreenHeader({super.key});
   @override
   Widget build(BuildContext context) {
-    return PopularAppBar(const Icon(CupertinoIcons.bars));
+    return Column(
+      children: [
+        PopularAppBar(InkWell(child: const Icon(CupertinoIcons.bars))),
+        const Padding(
+          padding: const EdgeInsets.all(10),
+          child: SearchWidget(),
+        ),
+        CtaegoriesList(),
+      ],
+    );
   }
 }
 
@@ -80,6 +89,48 @@ class ProductItem extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+}
+
+class SearchWidget extends StatelessWidget {
+  const SearchWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.symmetric(),
+      child: Container(
+        height: 50,
+        width: double.infinity,
+        decoration: BoxDecoration(boxShadow: [
+          BoxShadow(
+              blurRadius: 6,
+              spreadRadius: 1,
+              color: Color.fromARGB(125, 0, 0, 0))
+        ], color: Colors.white, borderRadius: BorderRadius.circular(20)),
+        child: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 20),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              const Icon(
+                Icons.search,
+                color: Colors.red,
+              ),
+              Expanded(
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 10),
+                  child: TextFormField(
+                      decoration: InputDecoration(
+                          hintText: "what would you want ",
+                          border: InputBorder.none)),
+                ),
+              ),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

@@ -5,14 +5,6 @@ import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 class HomeNewestWidget extends StatelessWidget {
   HomeNewestWidget({super.key});
 
-  // List<ProductItemNewest> newestList = [
-  //   ProductItemNewest(
-  //     myImage: 'assets/piryabi.png',
-  //   ),
-  //   ProductItemNewest(
-  //     myImage: 'assets/pizza.png',
-  //   )
-  // ];
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
