@@ -1,20 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../../widgets/appbar.dart';
+import '../../../widgets/appbar.dart';
 
 class HomeScreenHeader extends StatelessWidget {
   HomeScreenHeader({super.key});
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        PopularAppBar(InkWell(child: const Icon(CupertinoIcons.bars))),
-        const Padding(
-          padding: const EdgeInsets.all(10),
-          child: SearchWidget(),
-        ),
-        CtaegoriesList(),
-      ],
+    return SliverToBoxAdapter(
+      child: Column(
+        children: [
+          PopularAppBar(InkWell(child: const Icon(CupertinoIcons.bars))),
+          const Padding(
+            padding: const EdgeInsets.all(10),
+            child: SearchWidget(),
+          ),
+          CtaegoriesList(),
+        ],
+      ),
     );
   }
 }
@@ -99,11 +101,11 @@ class SearchWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(),
+      padding: const EdgeInsets.symmetric(),
       child: Container(
         height: 50,
         width: double.infinity,
-        decoration: BoxDecoration(boxShadow: [
+        decoration: BoxDecoration(boxShadow: const [
           BoxShadow(
               blurRadius: 6,
               spreadRadius: 1,
@@ -122,7 +124,7 @@ class SearchWidget extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.only(left: 10),
                   child: TextFormField(
-                      decoration: InputDecoration(
+                      decoration: const InputDecoration(
                           hintText: "what would you want ",
                           border: InputBorder.none)),
                 ),

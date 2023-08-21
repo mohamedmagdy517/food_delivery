@@ -7,7 +7,7 @@ class HomeNewestWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return SliverToBoxAdapter(
       child: Column(
         children: [
           Padding(
@@ -94,7 +94,7 @@ class ProductItemNewest2 extends StatelessWidget {
                               ),
                               Container(
                                 width: 200,
-                                child: Text(
+                                child: const Text(
                                   ' Taste Our Hot Pizza We \n provide our  Great Food',
                                   style: TextStyle(
                                       color: Colors.grey,

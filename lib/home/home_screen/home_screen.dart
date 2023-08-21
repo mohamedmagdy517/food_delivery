@@ -1,9 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:food_delivery/home/home_screen/widgets/home_newest_widget.dart';
+import 'package:food_delivery/home/home_screen/widgets/home_popular_widget.dart';
 import '../../constants/contants.dart';
-import '../widgets/home_header_widget.dart';
-import '../widgets/home_newest_widget.dart';
-import '../widgets/home_popular_widget.dart';
+import 'widgets/home_header_widget.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -14,14 +14,12 @@ class HomePage extends StatelessWidget {
       child: Scaffold(
         drawer: const HomeScreenDrawer(),
         backgroundColor: _constants.PrimaryColor,
-        body: SingleChildScrollView(
-          child: Column(
-            children: [
-              HomeScreenHeader(),
-              const HomePopularWidget(),
-              HomeNewestWidget(),
-            ],
-          ),
+        body: CustomScrollView(
+          slivers: [
+            HomeScreenHeader(),
+            const HomePopularWidget(),
+            HomeNewestWidget(),
+          ],
         ),
       ),
     );
